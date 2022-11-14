@@ -6,7 +6,7 @@ let movieContainer = document.getElementById('movie-container')
 const searchBtn = document.getElementById('search-btn')
   function searchMovie(){
     let movie = document.getElementById('movie').value
-    fetch('http://www.omdbapi.com/?apikey='+key+'&s='+movie)
+    fetch('https://www.omdbapi.com/?apikey='+key+'&s='+movie)
   .then((response) => response.json())
   .then((data) =>{ console.log(data)
     let movieList = data.Search.map(function(movie){
@@ -33,7 +33,7 @@ const searchBtn = document.getElementById('search-btn')
   function getMovieDetails(){
     let movieId = localStorage.getItem('movieId')
     console.log(movieId)
-    fetch('http://www.omdbapi.com/?apikey='+key+'&i='+movieId)
+    fetch('https://www.omdbapi.com/?apikey='+key+'&i='+movieId)
     .then((response) => response.json())
     .then((data) =>{ console.log(data)
      let singleMovie = `<div class="single-movie">
